@@ -1,0 +1,1 @@
+samplenode3 ansible_ssh_host=10.128.0.49 ansible_ssh_user=root
