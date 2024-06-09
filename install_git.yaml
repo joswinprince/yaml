@@ -1,0 +1,22 @@
+---
+- name: Install Git on remote servers
+  hosts: samplenode3
+  become: yes  # Ensures the tasks run with sudo privileges
+  tasks:
+    - name: Ensure Git is installed on Debian-based systems
+      apt:
+        name: git
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure Git is installed on RedHat-based systems
+      yum:
+        name: git
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Ensure Git is installed on RedHat-based systems
+      yum:
+        name: git
+        state: present
+      when: ansible_os_family == "Ubuntu"
